@@ -24,6 +24,20 @@ local function open_window()
   vim.api.nvim_command('terminal')
 end
 
-return {
-  open_window= open_window,
-}
+local testpg = {}
+local fuction with_defaults(options)
+  return{
+    name = options.name or 'testpg'
+  }
+end
+
+function testpg.setup(options)
+  testpg.options = with_defaults(options)
+  vim.api.nvim_create_user_command('Testpg', 'testpg.open_window()', {
+    nargs = 0,
+    silent = true
+  })
+end
+
+testpg.options = nil
+return testpg
