@@ -27,7 +27,7 @@ end
 local testpg = {}
 
 function testpg.setup()
-  vim.api.nvim_create_user_command('Testpg', 'testpg.open_window()', {})
+  vim.api.nvim_create_user_command('Testpg', open_window(), {})
 end
 
 return testpg
