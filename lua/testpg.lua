@@ -25,7 +25,7 @@ local function open_window()
 end
 
 local testpg = {}
-local fuction with_defaults(options)
+local function with_defaults(options)
   return{
     name = options.name or 'testpg'
   }
